@@ -3,6 +3,7 @@ import { Button } from 'primereact/button';
 import { Card } from 'primereact/card';
 import './App.css';
 import { useEffect, useState } from 'react';
+import { Counter } from './components/ReduxDemo';
 
 interface InputFieldProps {
   label: string;
@@ -85,6 +86,8 @@ function App() {
             </div>
           </div>
         </Card>
+        <Counter>
+        </Counter>
       </form>
     </div>
   );
