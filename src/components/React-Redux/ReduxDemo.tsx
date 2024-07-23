@@ -1,7 +1,7 @@
 import { Button } from "primereact/button";
-import { decrement, increment } from "../features/counter/counterSlice";
+import { decrement, increment } from "../../features/counter/counterSlice";
 import { Card } from "primereact/card";
-import { useAppDispatch, useAppSelector } from "../hooks";
+import { useAppDispatch, useAppSelector } from "../../hooks";
 
 export function Counter() {
     const count = useAppSelector((state) => state.counter.value);
