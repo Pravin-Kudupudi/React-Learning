@@ -27,10 +27,13 @@ function TextInput({label, value, onChange, error}: InputFieldProps) {
 //Main Form component demonstrates basic use of "useState" and "useEffect" hooks to store inputs in variables (or maintain their states) and to detect changes
 //in the form
 function Form() {
+
+  //Here we use javascripts destructuring syntax to assign values to firstName and setFirstName
   const [firstName, setFirstName] = useState<string>('');
   const [lastName, setLastName] = useState<string>('');
   const [errors, setErrors] = useState<{ [key: string]: string}>({});
 
+  //A method that creates an error object if any and returns it
   const validate = () => {
     const newErrors: { [key: string]: string } = {};
     if (!firstName) newErrors.firstName = 'Please enter valid first name';
@@ -39,7 +42,7 @@ function Form() {
   }
 
   const handleSubmit = (e: any) => {
-    e.preventDefault();
+    e.preventDefault(); //The browser's default behaviour is to reload the page whenever a form is submitted. This prevents the default behaviour.
     const validationErrors = validate();
     if (Object.keys(validationErrors).length === 0){
       console.log('Form is valid:', { firstName, lastName });
@@ -68,8 +71,8 @@ function Form() {
         <Card title="Form demo">
           <div className="col-12 grid p-fluid">
             <div className="col-6 input-wrapper">
-              <TextInput
-                label="First Name"
+              <TextInput //Passing appropriate props to the component for first name and last name
+                label="First Name" 
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
                 error={errors.firstName}

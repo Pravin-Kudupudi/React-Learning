@@ -7,8 +7,8 @@ export const counterSlice = createSlice({
     },
     reducers: {
         increment: (state: any) => {
-            // Redux Toolkit's createSlice and createReducer APIs use the a tiny package called Immer that produces a brand new immutable state. 
-            // No return statement required.
+            // Redux Toolkit's createSlice and createReducer APIs use a tiny package called Immer that produces a brand new immutable state,
+            // (creates a copy of the state, updates it and returns the updated state). No return statement required.
             state.value += 1 
         },
         decrement: (state: any) => {
