@@ -26,7 +26,7 @@ function TextInput({label, value, onChange, error}: InputFieldProps) {
 
 //Main Form component demonstrates basic use of "useState" and "useEffect" hooks to store inputs in variables (or maintain their states) and to detect changes
 //in the form
-function Form() {
+export default function Form() {
 
   //Here we use javascripts destructuring syntax to assign values to firstName and setFirstName
   const [firstName, setFirstName] = useState<string>('');
@@ -66,7 +66,7 @@ function Form() {
   }, [lastName]);
   
   return (
-    <div className="card">
+    <div className="login-body">
       <form autoComplete="off" onSubmit={handleSubmit}>
         <Card title="Form demo">
           <div className="col-12 grid p-fluid">
@@ -95,5 +95,3 @@ function Form() {
     </div>
   );
 }
-
-export default Form;

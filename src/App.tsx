@@ -1,8 +1,8 @@
 import './App.css';
-import { Counter } from './components/React-Redux/ReduxDemo';
+import Counter from './components/React-Redux/ReduxDemo';
 import Form from './components/Basic-Form-with-validation/FormDemo';
 
-function App() {
+export default function App() {
   return (
     <div className="card">
       <Form></Form>
@@ -10,5 +10,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

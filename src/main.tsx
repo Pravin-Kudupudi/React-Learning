@@ -7,12 +7,30 @@ import ReactDOM from 'react-dom/client'
 import { Provider } from 'react-redux';
 import store from './store.ts';
 
-import App from './App.tsx'
 import './index.css'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Root from './routes/root.tsx';
+import Form from './components/Basic-Form-with-validation/FormDemo.tsx';
+import Counter from './components/React-Redux/ReduxDemo.tsx';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root></Root>
+  },
+  {
+    path: "/form",
+    element: <Form></Form>
+  },
+  {
+    path: "/redux",
+    element: <Counter></Counter>
+  }
+])
 
 const root = ReactDOM.createRoot(document.getElementById('root')!)
   root.render(
     <Provider store={store}>
-      <App/>
+      <RouterProvider router={router}></RouterProvider>
     </Provider>,
   )
